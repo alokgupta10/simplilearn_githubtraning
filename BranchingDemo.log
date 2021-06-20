@@ -1,0 +1,1856 @@
+Alok@HW10-MyPC MINGW64 ~/Downloads (master)
+$ cd git
+Git Branching Strategy.docx  Git-2.31.0-64-bit.exe        Git_Ebooks.zip               gitdemo/
+
+Alok@HW10-MyPC MINGW64 ~/Downloads (master)
+$ cd gitdemo/
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo (master)
+$ ls -l
+total 12
+drwxr-xr-x 1 Alok 197121 0 Jun 13 21:05 counterapplication/
+drwxr-xr-x 1 Alok 197121 0 Jun 14 18:15 gcp-demo/
+drwxr-xr-x 1 Alok 197121 0 Jun 12 20:08 simplilearn_githubtraning/
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo (master)
+$ cd simplilearn_githubtraning/
+l
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ ls -ltr
+total 1
+-rw-r--r-- 1 Alok 197121 51 Jun 12 20:08 README.md
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ ls -larth
+total 9.0K
+-rw-r--r-- 1 Alok 197121 51 Jun 12 20:08 README.md
+drwxr-xr-x 1 Alok 197121  0 Jun 12 20:08 ./
+drwxr-xr-x 1 Alok 197121  0 Jun 12 20:26 .git/
+drwxr-xr-x 1 Alok 197121  0 Jun 14 18:15 ../
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git config
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ ls -ltr
+total 1
+-rw-r--r-- 1 Alok 197121 51 Jun 12 20:08 README.md
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git branch
+* master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git branch -b hotfix
+error: unknown switch `b'
+usage: git branch [<options>] [-r | -a] [--merged] [--no-merged]
+   or: git branch [<options>] [-l] [-f] <branch-name> [<start-point>]
+   or: git branch [<options>] [-r] (-d | -D) <branch-name>...
+   or: git branch [<options>] (-m | -M) [<old-branch>] <new-branch>
+   or: git branch [<options>] (-c | -C) [<old-branch>] <new-branch>
+   or: git branch [<options>] [-r | -a] [--points-at]
+   or: git branch [<options>] [-r | -a] [--format]
+
+Generic options
+    -v, --verbose         show hash and subject, give twice for upstream branch
+    -q, --quiet           suppress informational messages
+    -t, --track           set up tracking mode (see git-pull(1))
+    -u, --set-upstream-to <upstream>
+                          change the upstream info
+    --unset-upstream      unset the upstream info
+    --color[=<when>]      use colored output
+    -r, --remotes         act on remote-tracking branches
+    --contains <commit>   print only branches that contain the commit
+    --no-contains <commit>
+                          print only branches that don't contain the commit
+    --abbrev[=<n>]        use <n> digits to display object names
+
+Specific git-branch actions:
+    -a, --all             list both remote-tracking and local branches
+    -d, --delete          delete fully merged branch
+    -D                    delete branch (even if not merged)
+    -m, --move            move/rename a branch and its reflog
+    -M                    move/rename a branch, even if target exists
+    -c, --copy            copy a branch and its reflog
+    -C                    copy a branch, even if target exists
+    -l, --list            list branch names
+    --show-current        show current branch name
+    --create-reflog       create the branch's reflog
+    --edit-description    edit the description for the branch
+    -f, --force           force creation, move/rename, deletion
+    --merged <commit>     print only branches that are merged
+    --no-merged <commit>  print only branches that are not merged
+    --column[=<style>]    list branches in columns
+    --sort <key>          field name to sort on
+    --points-at <object>  print only branches of the object
+    -i, --ignore-case     sorting and filtering are case insensitive
+    --format <format>     format to use for the output
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git checkout -b hotfix
+Switched to a new branch 'hotfix'
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git branch
+* hotfix
+  master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git checkout -b integration
+Switched to a new branch 'integration'
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git branch
+  hotfix
+* integration
+  master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git checkout -b feature1
+Switched to a new branch 'feature1'
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git branch
+* feature1
+  hotfix
+  integration
+  master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git checkout -b feature2
+Switched to a new branch 'feature2'
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature2)
+$ git branch
+  feature1
+* feature2
+  hotfix
+  integration
+  master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature2)
+$ git checkout master
+Switched to branch 'master'
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git branch
+  feature1
+  feature2
+  hotfix
+  integration
+* master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ ls -tlr
+total 1
+-rw-r--r-- 1 Alok 197121 51 Jun 12 20:08 README.md
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git checkout feature2
+Switched to branch 'feature2'
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature2)
+$
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature2)
+$
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature2)
+$ git brnach -l
+git: 'brnach' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature2)
+$ git branch -l
+  feature1
+* feature2
+  hotfix
+  integration
+  master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature2)
+$ vi README.md
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature2)
+$ vi README.md
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature2)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature2 Branch : Modification Completed
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature2)
+$ git status
+On branch feature2
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature2)
+$ git add .
+warning: LF will be replaced by CRLF in README.md.
+The file will have its original line endings in your working directory
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature2)
+$ git status
+On branch feature2
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature2)
+$ git commit -m "Feature2 Brnach Commiting"
+[feature2 6c6b870] Feature2 Brnach Commiting
+ 1 file changed, 2 insertions(+)
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature2)
+$ git checkout intergration
+error: pathspec 'intergration' did not match any file(s) known to git
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature2)
+$ git branch -l
+  feature1
+* feature2
+  hotfix
+  integration
+  master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature2)
+$ git checkout integration
+Switched to branch 'integration'
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git merge --no-ff feature2
+Merge made by the 'recursive' strategy.
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git branch -l
+  feature1
+  feature2
+  hotfix
+* integration
+  master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature2 Branch : Modification Completed
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git branch feature1
+fatal: A branch named 'feature1' already exists.
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git checkout feature1
+Switched to branch 'feature1'
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git checkout feature2
+Switched to branch 'feature2'
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature2)
+$ git remote -v
+origin  https://github.com/alokgupta10/simplilearn_githubtraning.git (fetch)
+origin  https://github.com/alokgupta10/simplilearn_githubtraning.git (push)
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature2)
+$ git push origin master
+To https://github.com/alokgupta10/simplilearn_githubtraning.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/alokgupta10/simplilearn_githubtraning.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature2)
+$ git push origin feature2
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 337 bytes | 168.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'feature2' on GitHub by visiting:
+remote:      https://github.com/alokgupta10/simplilearn_githubtraning/pull/new/feature2
+remote:
+To https://github.com/alokgupta10/simplilearn_githubtraning.git
+ * [new branch]      feature2 -> feature2
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature2)
+$ git checkout integration
+Switched to branch 'integration'
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git branch -l
+  feature1
+  feature2
+  hotfix
+* integration
+  master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature2 Branch : Modification Completed
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git branch -d feature2
+Deleted branch feature2 (was 6c6b870).
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ gir branch -l
+bash: gir: command not found
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git branch -l
+  feature1
+  hotfix
+* integration
+  master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git checkout feature1
+Switched to branch 'feature1'
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ vi README.md
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+
+Feature1 Branch : Modifiying Changes into files
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git stauts
+git: 'stauts' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git status
+On branch feature1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git add .
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git status
+On branch feature1
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git commit -m "Feature1 Branch Commit"
+[feature1 c058bc6] Feature1 Branch Commit
+ 1 file changed, 2 insertions(+)
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git status
+On branch feature1
+nothing to commit, working tree clean
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ vi README.md
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git commit -m "Feature1 Branch Second Commit"
+On branch feature1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git add .
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git commit -m "Feature1 Branch Second Commit"
+[feature1 0991d2d] Feature1 Branch Second Commit
+ 1 file changed, 1 deletion(-)
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature1 Branch : Modifiying Changes into files
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git status
+On branch feature1
+nothing to commit, working tree clean
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git branch intergration
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git branch -l
+* feature1
+  hotfix
+  integration
+  intergration
+  master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature1 Branch : Modifiying Changes into files
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git branch -d intergration
+Deleted branch intergration (was 0991d2d).
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git branch -l
+* feature1
+  hotfix
+  integration
+  master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git checkout integration
+Switched to branch 'integration'
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature2 Branch : Modification Completed
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git log --oneline
+ae46b8d (HEAD -> integration) Merge branch 'feature2' into integration
+6c6b870 (origin/feature2) Feature2 Brnach Commiting
+3ab8bc8 (master, hotfix) First Commit
+68177ff Initial commit
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git rebase feature1
+error: could not apply 6c6b870... Feature2 Brnach Commiting
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 6c6b870... Feature2 Brnach Commiting
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration|REBASE 1/1)
+$ git log --oneline
+0991d2d (HEAD, feature1) Feature1 Branch Second Commit
+c058bc6 Feature1 Branch Commit
+3ab8bc8 (master, hotfix) First Commit
+68177ff Initial commit
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration|REBASE 1/1)
+$ git log -
+fatal: unrecognized argument: -
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration|REBASE 1/1)
+$ git log
+commit 0991d2dd63c49b4eb15d98ed8c4964b33bbce509 (HEAD, feature1)
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:52:40 2021 +0530
+
+    Feature1 Branch Second Commit
+
+commit c058bc6f6a790205647c013fb698cd0e2929b0cf
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:50:51 2021 +0530
+
+    Feature1 Branch Commit
+
+commit 3ab8bc805831912ff9a4419692e196d295731f1a (master, hotfix)
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sat Jun 12 20:09:21 2021 +0530
+
+    First Commit
+
+commit 68177ffe29d4d312842710afadce43eac765288c
+Author: alokgupta10 <61457184+alokgupta10@users.noreply.github.com>
+Date:   Sat Jun 12 20:05:31 2021 +0530
+
+    Initial commit
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration|REBASE 1/1)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+<<<<<<< HEAD
+Feature1 Branch : Modifiying Changes into files
+=======
+Feature2 Branch : Modification Completed
+
+>>>>>>> 6c6b870 (Feature2 Brnach Commiting)
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration|REBASE 1/1)
+$ vi README.md
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration|REBASE 1/1)
+$ git status
+interactive rebase in progress; onto 0991d2d
+Last command done (1 command done):
+   pick 6c6b870 Feature2 Brnach Commiting
+No commands remaining.
+You are currently rebasing branch 'integration' on '0991d2d'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration|REBASE 1/1)
+$ git rebase --continue
+README.md: needs merge
+You must edit all merge conflicts and then
+mark them as resolved using git add
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration|REBASE 1/1)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature1 Branch : Modifiying Changes into files
+Feature2 Branch : Modification Completed
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration|REBASE 1/1)
+$ git add .
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration|REBASE 1/1)
+$ git status
+interactive rebase in progress; onto 0991d2d
+Last command done (1 command done):
+   pick 6c6b870 Feature2 Brnach Commiting
+No commands remaining.
+You are currently rebasing branch 'integration' on '0991d2d'.
+  (all conflicts fixed: run "git rebase --continue")
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration|REBASE 1/1)
+$ git rebase --continue
+[detached HEAD 875a9b0] Feature2 Brnach Commiting Resolving the Conflict occured during rebaseing from Feature1 Branch to Integration Branch
+ 1 file changed, 1 insertion(+)
+Successfully rebased and updated refs/heads/integration.
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git log
+commit 875a9b08077e24e69ea8fce5841ee13fd930765e (HEAD -> integration)
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:38:49 2021 +0530
+
+    Feature2 Brnach Commiting
+    Resolving the Conflict occured during rebaseing from Feature1 Branch to
+    Integration Branch
+
+commit 0991d2dd63c49b4eb15d98ed8c4964b33bbce509 (feature1)
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:52:40 2021 +0530
+
+    Feature1 Branch Second Commit
+
+commit c058bc6f6a790205647c013fb698cd0e2929b0cf
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:50:51 2021 +0530
+
+    Feature1 Branch Commit
+
+commit 3ab8bc805831912ff9a4419692e196d295731f1a (master, hotfix)
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sat Jun 12 20:09:21 2021 +0530
+
+    First Commit
+
+commit 68177ffe29d4d312842710afadce43eac765288c
+Author: alokgupta10 <61457184+alokgupta10@users.noreply.github.com>
+Date:   Sat Jun 12 20:05:31 2021 +0530
+
+    Initial commit
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git status
+On branch integration
+nothing to commit, working tree clean
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature1 Branch : Modifiying Changes into files
+Feature2 Branch : Modification Completed
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git branch -l
+  feature1
+  hotfix
+* integration
+  master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git checkout hotfix
+Switched to branch 'hotfix'
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git merge --no-ff integration
+Merge made by the 'recursive' strategy.
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git status
+On branch hotfix
+nothing to commit, working tree clean
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git log
+commit e4072c52d313facca6941d79a462afbd7c87f0b3 (HEAD -> hotfix)
+Merge: 3ab8bc8 875a9b0
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:09:17 2021 +0530
+
+    Merge branch 'integration' into hotfix
+
+commit 875a9b08077e24e69ea8fce5841ee13fd930765e (integration)
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:38:49 2021 +0530
+
+    Feature2 Brnach Commiting
+    Resolving the Conflict occured during rebaseing from Feature1 Branch to
+    Integration Branch
+
+commit 0991d2dd63c49b4eb15d98ed8c4964b33bbce509 (feature1)
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:52:40 2021 +0530
+
+    Feature1 Branch Second Commit
+
+commit c058bc6f6a790205647c013fb698cd0e2929b0cf
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:50:51 2021 +0530
+
+    Feature1 Branch Commit
+
+commit 3ab8bc805831912ff9a4419692e196d295731f1a (master)
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sat Jun 12 20:09:21 2021 +0530
+
+    First Commit
+
+commit 68177ffe29d4d312842710afadce43eac765288c
+Author: alokgupta10 <61457184+alokgupta10@users.noreply.github.com>
+Date:   Sat Jun 12 20:05:31 2021 +0530
+
+    Initial commit
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git log --oneline
+e4072c5 (HEAD -> hotfix) Merge branch 'integration' into hotfix
+875a9b0 (integration) Feature2 Brnach Commiting Resolving the Conflict occured during rebaseing from Feature1 Branch to Integration Branch
+0991d2d (feature1) Feature1 Branch Second Commit
+c058bc6 Feature1 Branch Commit
+3ab8bc8 (master) First Commit
+68177ff Initial commit
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git checkout master
+Switched to branch 'master'
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git branch -l
+  feature1
+  hotfix
+  integration
+* master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git merge --no-ff integration
+Merge made by the 'recursive' strategy.
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature1 Branch : Modifiying Changes into files
+Feature2 Branch : Modification Completed
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git log --oneline
+2e75610 (HEAD -> master) Merge branch 'integration' to 'master'
+875a9b0 (integration) Feature2 Brnach Commiting Resolving the Conflict occured during rebaseing from Feature1 Branch to Integration Branch
+0991d2d (feature1) Feature1 Branch Second Commit
+c058bc6 Feature1 Branch Commit
+3ab8bc8 First Commit
+68177ff Initial commit
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git log
+commit 2e7561002975e21db4cbd5ad136bfd53a4317521 (HEAD -> master)
+Merge: 3ab8bc8 875a9b0
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:12:06 2021 +0530
+
+    Merge branch 'integration' to 'master'
+
+commit 875a9b08077e24e69ea8fce5841ee13fd930765e (integration)
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:38:49 2021 +0530
+
+    Feature2 Brnach Commiting
+    Resolving the Conflict occured during rebaseing from Feature1 Branch to
+    Integration Branch
+
+commit 0991d2dd63c49b4eb15d98ed8c4964b33bbce509 (feature1)
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:52:40 2021 +0530
+
+    Feature1 Branch Second Commit
+
+commit c058bc6f6a790205647c013fb698cd0e2929b0cf
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:50:51 2021 +0530
+
+    Feature1 Branch Commit
+
+commit 3ab8bc805831912ff9a4419692e196d295731f1a
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sat Jun 12 20:09:21 2021 +0530
+
+    First Commit
+
+commit 68177ffe29d4d312842710afadce43eac765288c
+Author: alokgupta10 <61457184+alokgupta10@users.noreply.github.com>
+Date:   Sat Jun 12 20:05:31 2021 +0530
+
+    Initial commit
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git branch -l
+  feature1
+  hotfix
+  integration
+* master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git checkout feature1
+Switched to branch 'feature1'
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git branch -l
+* feature1
+  hotfix
+  integration
+  master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ vi README.md
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature1 Branch : Modifiying Changes into files
+Feature2 Branch : Second Modification after Rebasing and Merging to INtegration, Hotfix and Production Branch.
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ vi README.md
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git status
+On branch feature1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git add .
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git status
+On branch feature1
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git commit -m "Again Feature1 Commiting after Merging and Rebasing"
+[feature1 50422fc] Again Feature1 Commiting after Merging and Rebasing
+ 1 file changed, 1 insertion(+)
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature1 Branch : Modifiying Changes into files
+Feature1 Branch : Second Modification after Rebasing and Merging to INtegration, Hotfix and Production Branch.
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git status
+On branch feature1
+nothing to commit, working tree clean
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git branch -l
+* feature1
+  hotfix
+  integration
+  master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (feature1)
+$ git checkout hotfix
+Switched to branch 'hotfix'
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature1 Branch : Modifiying Changes into files
+Feature2 Branch : Modification Completed
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git merge --no-ff feature1
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix|MERGING)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature1 Branch : Modifiying Changes into files
+<<<<<<< HEAD
+Feature2 Branch : Modification Completed
+=======
+Feature1 Branch : Second Modification after Rebasing and Merging to INtegration, Hotfix and Production Branch.
+>>>>>>> feature1
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix|MERGING)
+$ vi README.md
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix|MERGING)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature1 Branch : Modifiying Changes into files
+Feature2 Branch : Modification Completed
+Feature1 Branch : Second Modification after Rebasing and Merging to INtegration, Hotfix and Production Branch.
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix|MERGING)
+$ git status
+On branch hotfix
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix|MERGING)
+$ git log --oneline
+e4072c5 (HEAD -> hotfix) Merge branch 'integration' into hotfix
+875a9b0 (integration) Feature2 Brnach Commiting Resolving the Conflict occured during rebaseing from Feature1 Branch to Integration Branch
+0991d2d Feature1 Branch Second Commit
+c058bc6 Feature1 Branch Commit
+3ab8bc8 First Commit
+68177ff Initial commit
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix|MERGING)
+$ git add .
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix|MERGING)
+$ git status
+On branch hotfix
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        modified:   README.md
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix|MERGING)
+$ git commit -m "Resloved Conflits"
+[hotfix 82a0517] Resloved Conflits
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git log --oneline
+82a0517 (HEAD -> hotfix) Resloved Conflits
+50422fc (feature1) Again Feature1 Commiting after Merging and Rebasing
+e4072c5 Merge branch 'integration' into hotfix
+875a9b0 (integration) Feature2 Brnach Commiting Resolving the Conflict occured during rebaseing from Feature1 Branch to Integration Branch
+0991d2d Feature1 Branch Second Commit
+c058bc6 Feature1 Branch Commit
+3ab8bc8 First Commit
+68177ff Initial commit
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature1 Branch : Modifiying Changes into files
+Feature2 Branch : Modification Completed
+Feature1 Branch : Second Modification after Rebasing and Merging to INtegration, Hotfix and Production Branch.
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git branch -l
+  feature1
+* hotfix
+  integration
+  master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git checkout integration
+Switched to branch 'integration'
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature1 Branch : Modifiying Changes into files
+Feature2 Branch : Modification Completed
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git merge --no-ff hotfix
+Merge made by the 'recursive' strategy.
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature1 Branch : Modifiying Changes into files
+Feature2 Branch : Modification Completed
+Feature1 Branch : Second Modification after Rebasing and Merging to INtegration, Hotfix and Production Branch.
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git checkout master
+Switched to branch 'master'
+Your branch and 'origin/master' have diverged,
+and have 4 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git branch -l
+  feature1
+  hotfix
+  integration
+* master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git merge --no-ff hotfix
+Merge made by the 'recursive' strategy.
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature1 Branch : Modifiying Changes into files
+Feature2 Branch : Modification Completed
+Feature1 Branch : Second Modification after Rebasing and Merging to INtegration, Hotfix and Production Branch.
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git log --oneline
+242489c (HEAD -> master) Merge branch 'hotfix' to 'master'
+82a0517 (hotfix) Resloved Conflits
+50422fc (feature1) Again Feature1 Commiting after Merging and Rebasing
+2e75610 Merge branch 'integration' to 'master'
+e4072c5 Merge branch 'integration' into hotfix
+875a9b0 Feature2 Brnach Commiting Resolving the Conflict occured during rebaseing from Feature1 Branch to Integration Branch
+0991d2d Feature1 Branch Second Commit
+c058bc6 Feature1 Branch Commit
+3ab8bc8 First Commit
+68177ff Initial commit
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git log
+commit 242489c2a574c472a5c4efdcb04f9cf1447eb990 (HEAD -> master)
+Merge: 2e75610 82a0517
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:25:31 2021 +0530
+
+    Merge branch 'hotfix' to 'master'
+
+commit 82a05171e5c23ffaa987d97fd5027fd7832471d5 (hotfix)
+Merge: e4072c5 50422fc
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:22:34 2021 +0530
+
+    Resloved Conflits
+
+commit 50422fc9112ef5ff97114f9e7741eaeae524c542 (feature1)
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:18:17 2021 +0530
+
+    Again Feature1 Commiting after Merging and Rebasing
+
+commit 2e7561002975e21db4cbd5ad136bfd53a4317521
+Merge: 3ab8bc8 875a9b0
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:12:06 2021 +0530
+
+    Merge branch 'integration' to 'master'
+
+commit e4072c52d313facca6941d79a462afbd7c87f0b3
+Merge: 3ab8bc8 875a9b0
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:09:17 2021 +0530
+
+    Merge branch 'integration' into hotfix
+
+commit 875a9b08077e24e69ea8fce5841ee13fd930765e
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:38:49 2021 +0530
+
+    Feature2 Brnach Commiting
+    Resolving the Conflict occured during rebaseing from Feature1 Branch to
+    Integration Branch
+
+commit 0991d2dd63c49b4eb15d98ed8c4964b33bbce509
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:52:40 2021 +0530
+
+    Feature1 Branch Second Commit
+
+commit c058bc6f6a790205647c013fb698cd0e2929b0cf
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:50:51 2021 +0530
+
+    Feature1 Branch Commit
+
+commit 3ab8bc805831912ff9a4419692e196d295731f1a
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sat Jun 12 20:09:21 2021 +0530
+
+    First Commit
+
+commit 68177ffe29d4d312842710afadce43eac765288c
+Author: alokgupta10 <61457184+alokgupta10@users.noreply.github.com>
+Date:   Sat Jun 12 20:05:31 2021 +0530
+
+    Initial commit
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git branch -l
+  feature1
+  hotfix
+  integration
+* master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git checkour integration
+git: 'checkour' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git checkout integration
+Switched to branch 'integration'
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git log --oneline
+6e6cee4 (HEAD -> integration) Merge branch 'hotfix' into integration
+82a0517 (hotfix) Resloved Conflits
+50422fc (feature1) Again Feature1 Commiting after Merging and Rebasing
+e4072c5 Merge branch 'integration' into hotfix
+875a9b0 Feature2 Brnach Commiting Resolving the Conflict occured during rebaseing from Feature1 Branch to Integration Branch
+0991d2d Feature1 Branch Second Commit
+c058bc6 Feature1 Branch Commit
+3ab8bc8 First Commit
+68177ff Initial commit
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git log
+commit 6e6cee4e65134f29f0b2ca5c215b1b38d672cf1a (HEAD -> integration)
+Merge: 875a9b0 82a0517
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:24:33 2021 +0530
+
+    Merge branch 'hotfix' into integration
+
+commit 82a05171e5c23ffaa987d97fd5027fd7832471d5 (hotfix)
+Merge: e4072c5 50422fc
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:22:34 2021 +0530
+
+    Resloved Conflits
+
+commit 50422fc9112ef5ff97114f9e7741eaeae524c542 (feature1)
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:18:17 2021 +0530
+
+    Again Feature1 Commiting after Merging and Rebasing
+
+commit e4072c52d313facca6941d79a462afbd7c87f0b3
+Merge: 3ab8bc8 875a9b0
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:09:17 2021 +0530
+
+    Merge branch 'integration' into hotfix
+
+commit 875a9b08077e24e69ea8fce5841ee13fd930765e
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:38:49 2021 +0530
+
+    Feature2 Brnach Commiting
+    Resolving the Conflict occured during rebaseing from Feature1 Branch to
+    Integration Branch
+
+commit 0991d2dd63c49b4eb15d98ed8c4964b33bbce509
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:52:40 2021 +0530
+
+    Feature1 Branch Second Commit
+
+commit c058bc6f6a790205647c013fb698cd0e2929b0cf
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:50:51 2021 +0530
+
+    Feature1 Branch Commit
+
+commit 3ab8bc805831912ff9a4419692e196d295731f1a
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sat Jun 12 20:09:21 2021 +0530
+
+    First Commit
+
+commit 68177ffe29d4d312842710afadce43eac765288c
+Author: alokgupta10 <61457184+alokgupta10@users.noreply.github.com>
+Date:   Sat Jun 12 20:05:31 2021 +0530
+
+    Initial commit
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git branch -l
+  feature1
+  hotfix
+* integration
+  master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git checkout hotfix
+Switched to branch 'hotfix'
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git log --onleine
+fatal: unrecognized argument: --onleine
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git log --oneline
+82a0517 (HEAD -> hotfix) Resloved Conflits
+50422fc (feature1) Again Feature1 Commiting after Merging and Rebasing
+e4072c5 Merge branch 'integration' into hotfix
+875a9b0 Feature2 Brnach Commiting Resolving the Conflict occured during rebaseing from Feature1 Branch to Integration Branch
+0991d2d Feature1 Branch Second Commit
+c058bc6 Feature1 Branch Commit
+3ab8bc8 First Commit
+68177ff Initial commit
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git log
+commit 82a05171e5c23ffaa987d97fd5027fd7832471d5 (HEAD -> hotfix)
+Merge: e4072c5 50422fc
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:22:34 2021 +0530
+
+    Resloved Conflits
+
+commit 50422fc9112ef5ff97114f9e7741eaeae524c542 (feature1)
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:18:17 2021 +0530
+
+    Again Feature1 Commiting after Merging and Rebasing
+
+commit e4072c52d313facca6941d79a462afbd7c87f0b3
+Merge: 3ab8bc8 875a9b0
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:09:17 2021 +0530
+
+    Merge branch 'integration' into hotfix
+
+commit 875a9b08077e24e69ea8fce5841ee13fd930765e
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:38:49 2021 +0530
+
+    Feature2 Brnach Commiting
+    Resolving the Conflict occured during rebaseing from Feature1 Branch to
+    Integration Branch
+
+commit 0991d2dd63c49b4eb15d98ed8c4964b33bbce509
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:52:40 2021 +0530
+
+    Feature1 Branch Second Commit
+
+commit c058bc6f6a790205647c013fb698cd0e2929b0cf
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:50:51 2021 +0530
+
+    Feature1 Branch Commit
+
+commit 3ab8bc805831912ff9a4419692e196d295731f1a
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sat Jun 12 20:09:21 2021 +0530
+
+    First Commit
+
+commit 68177ffe29d4d312842710afadce43eac765288c
+Author: alokgupta10 <61457184+alokgupta10@users.noreply.github.com>
+Date:   Sat Jun 12 20:05:31 2021 +0530
+
+    Initial commit
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git branch -l
+  feature1
+* hotfix
+  integration
+  master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git branch -d feature1
+Deleted branch feature1 (was 50422fc).
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git branch -l
+* hotfix
+  integration
+  master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ vi README.md
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git status
+On branch hotfix
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git add .
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git status
+On branch hotfix
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git commit -m "Hotfix Branch First Commit"
+[hotfix e5df49d] Hotfix Branch First Commit
+ 1 file changed, 1 insertion(+)
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature1 Branch : Modifiying Changes into files
+Feature2 Branch : Modification Completed
+Feature1 Branch : Second Modification after Rebasing and Merging to INtegration, Hotfix and Production Branch.
+Hotfix Branch: Modification Changes in files
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git status
+On branch hotfix
+nothing to commit, working tree clean
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git log --oneline
+e5df49d (HEAD -> hotfix) Hotfix Branch First Commit
+82a0517 Resloved Conflits
+50422fc Again Feature1 Commiting after Merging and Rebasing
+e4072c5 Merge branch 'integration' into hotfix
+875a9b0 Feature2 Brnach Commiting Resolving the Conflict occured during rebaseing from Feature1 Branch to Integration Branch
+0991d2d Feature1 Branch Second Commit
+c058bc6 Feature1 Branch Commit
+3ab8bc8 First Commit
+68177ff Initial commit
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git branch -l
+* hotfix
+  integration
+  master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git log
+commit e5df49de1ec17bb65a22853f60fc75a6f6a262ab (HEAD -> hotfix)
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:34:00 2021 +0530
+
+    Hotfix Branch First Commit
+
+commit 82a05171e5c23ffaa987d97fd5027fd7832471d5
+Merge: e4072c5 50422fc
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:22:34 2021 +0530
+
+    Resloved Conflits
+
+commit 50422fc9112ef5ff97114f9e7741eaeae524c542
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:18:17 2021 +0530
+
+    Again Feature1 Commiting after Merging and Rebasing
+
+commit e4072c52d313facca6941d79a462afbd7c87f0b3
+Merge: 3ab8bc8 875a9b0
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:09:17 2021 +0530
+
+    Merge branch 'integration' into hotfix
+
+commit 875a9b08077e24e69ea8fce5841ee13fd930765e
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:38:49 2021 +0530
+
+    Feature2 Brnach Commiting
+    Resolving the Conflict occured during rebaseing from Feature1 Branch to
+    Integration Branch
+
+commit 0991d2dd63c49b4eb15d98ed8c4964b33bbce509
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:52:40 2021 +0530
+
+    Feature1 Branch Second Commit
+
+commit c058bc6f6a790205647c013fb698cd0e2929b0cf
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:50:51 2021 +0530
+
+    Feature1 Branch Commit
+
+commit 3ab8bc805831912ff9a4419692e196d295731f1a
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sat Jun 12 20:09:21 2021 +0530
+
+    First Commit
+
+commit 68177ffe29d4d312842710afadce43eac765288c
+Author: alokgupta10 <61457184+alokgupta10@users.noreply.github.com>
+Date:   Sat Jun 12 20:05:31 2021 +0530
+
+    Initial commit
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git branch -l
+* hotfix
+  integration
+  master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (hotfix)
+$ git checkout integration
+Switched to branch 'integration'
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature1 Branch : Modifiying Changes into files
+Feature2 Branch : Modification Completed
+Feature1 Branch : Second Modification after Rebasing and Merging to INtegration, Hotfix and Production Branch.
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git merge --no-ff hotfix
+Merge made by the 'recursive' strategy.
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature1 Branch : Modifiying Changes into files
+Feature2 Branch : Modification Completed
+Feature1 Branch : Second Modification after Rebasing and Merging to INtegration, Hotfix and Production Branch.
+Hotfix Branch: Modification Changes in files
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git --oneline
+unknown option: --oneline
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git log --oneline
+f9f8c42 (HEAD -> integration) Merge branch 'hotfix' into integration
+e5df49d (hotfix) Hotfix Branch First Commit
+6e6cee4 Merge branch 'hotfix' into integration
+82a0517 Resloved Conflits
+50422fc Again Feature1 Commiting after Merging and Rebasing
+e4072c5 Merge branch 'integration' into hotfix
+875a9b0 Feature2 Brnach Commiting Resolving the Conflict occured during rebaseing from Feature1 Branch to Integration Branch
+0991d2d Feature1 Branch Second Commit
+c058bc6 Feature1 Branch Commit
+3ab8bc8 First Commit
+68177ff Initial commit
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git log
+commit f9f8c427dff147b272e2bad8e9f760006b7eeaca (HEAD -> integration)
+Merge: 6e6cee4 e5df49d
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:36:44 2021 +0530
+
+    Merge branch 'hotfix' into integration
+
+commit e5df49de1ec17bb65a22853f60fc75a6f6a262ab (hotfix)
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:34:00 2021 +0530
+
+    Hotfix Branch First Commit
+
+commit 6e6cee4e65134f29f0b2ca5c215b1b38d672cf1a
+Merge: 875a9b0 82a0517
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:24:33 2021 +0530
+
+    Merge branch 'hotfix' into integration
+
+commit 82a05171e5c23ffaa987d97fd5027fd7832471d5
+Merge: e4072c5 50422fc
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:22:34 2021 +0530
+
+    Resloved Conflits
+
+commit 50422fc9112ef5ff97114f9e7741eaeae524c542
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:18:17 2021 +0530
+
+    Again Feature1 Commiting after Merging and Rebasing
+
+commit e4072c52d313facca6941d79a462afbd7c87f0b3
+Merge: 3ab8bc8 875a9b0
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:09:17 2021 +0530
+
+    Merge branch 'integration' into hotfix
+
+commit 875a9b08077e24e69ea8fce5841ee13fd930765e
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:38:49 2021 +0530
+
+    Feature2 Brnach Commiting
+    Resolving the Conflict occured during rebaseing from Feature1 Branch to
+    Integration Branch
+
+commit 0991d2dd63c49b4eb15d98ed8c4964b33bbce509
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:52:40 2021 +0530
+
+    Feature1 Branch Second Commit
+
+commit c058bc6f6a790205647c013fb698cd0e2929b0cf
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:50:51 2021 +0530
+
+    Feature1 Branch Commit
+
+commit 3ab8bc805831912ff9a4419692e196d295731f1a
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sat Jun 12 20:09:21 2021 +0530
+
+    First Commit
+
+commit 68177ffe29d4d312842710afadce43eac765288c
+Author: alokgupta10 <61457184+alokgupta10@users.noreply.github.com>
+Date:   Sat Jun 12 20:05:31 2021 +0530
+
+    Initial commit
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git push origin integration
+Enumerating objects: 23, done.
+Counting objects: 100% (23/23), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (21/21), 2.19 KiB | 187.00 KiB/s, done.
+Total 21 (delta 6), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), done.
+remote:
+remote: Create a pull request for 'integration' on GitHub by visiting:
+remote:      https://github.com/alokgupta10/simplilearn_githubtraning/pull/new/integration
+remote:
+To https://github.com/alokgupta10/simplilearn_githubtraning.git
+ * [new branch]      integration -> integration
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git branch -l
+  hotfix
+* integration
+  master
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git push origin hotfix
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'hotfix' on GitHub by visiting:
+remote:      https://github.com/alokgupta10/simplilearn_githubtraning/pull/new/hotfix
+remote:
+To https://github.com/alokgupta10/simplilearn_githubtraning.git
+ * [new branch]      hotfix -> hotfix
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (integration)
+$ git checkout master
+Switched to branch 'master'
+Your branch and 'origin/master' have diverged,
+and have 8 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$
+
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature1 Branch : Modifiying Changes into files
+Feature2 Branch : Modification Completed
+Feature1 Branch : Second Modification after Rebasing and Merging to INtegration, Hotfix and Production Branch.
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git merge --no-ff hotfix
+Merge made by the 'recursive' strategy.
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git log --oneline
+a8125cc (HEAD -> master) Merge branch 'hotfix' to 'master'
+e5df49d (origin/hotfix, hotfix) Hotfix Branch First Commit
+242489c Merge branch 'hotfix' to 'master'
+82a0517 Resloved Conflits
+50422fc Again Feature1 Commiting after Merging and Rebasing
+2e75610 Merge branch 'integration' to 'master'
+e4072c5 Merge branch 'integration' into hotfix
+875a9b0 Feature2 Brnach Commiting Resolving the Conflict occured during rebaseing from Feature1 Branch to Integration Branch
+0991d2d Feature1 Branch Second Commit
+c058bc6 Feature1 Branch Commit
+3ab8bc8 First Commit
+68177ff Initial commit
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git log
+commit a8125ccd80c5aaacbd2af069ccc91849d2dff8a7 (HEAD -> master)
+Merge: 242489c e5df49d
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:39:49 2021 +0530
+
+    Merge branch 'hotfix' to 'master'
+
+commit e5df49de1ec17bb65a22853f60fc75a6f6a262ab (origin/hotfix, hotfix)
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:34:00 2021 +0530
+
+    Hotfix Branch First Commit
+
+commit 242489c2a574c472a5c4efdcb04f9cf1447eb990
+Merge: 2e75610 82a0517
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:25:31 2021 +0530
+
+    Merge branch 'hotfix' to 'master'
+
+commit 82a05171e5c23ffaa987d97fd5027fd7832471d5
+Merge: e4072c5 50422fc
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:22:34 2021 +0530
+
+    Resloved Conflits
+
+commit 50422fc9112ef5ff97114f9e7741eaeae524c542
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:18:17 2021 +0530
+
+    Again Feature1 Commiting after Merging and Rebasing
+
+commit 2e7561002975e21db4cbd5ad136bfd53a4317521
+Merge: 3ab8bc8 875a9b0
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:12:06 2021 +0530
+
+    Merge branch 'integration' to 'master'
+
+commit e4072c52d313facca6941d79a462afbd7c87f0b3
+Merge: 3ab8bc8 875a9b0
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 20:09:17 2021 +0530
+
+    Merge branch 'integration' into hotfix
+
+commit 875a9b08077e24e69ea8fce5841ee13fd930765e
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:38:49 2021 +0530
+
+    Feature2 Brnach Commiting
+    Resolving the Conflict occured during rebaseing from Feature1 Branch to
+    Integration Branch
+
+commit 0991d2dd63c49b4eb15d98ed8c4964b33bbce509
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:52:40 2021 +0530
+
+    Feature1 Branch Second Commit
+
+commit c058bc6f6a790205647c013fb698cd0e2929b0cf
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sun Jun 20 19:50:51 2021 +0530
+
+    Feature1 Branch Commit
+
+commit 3ab8bc805831912ff9a4419692e196d295731f1a
+Author: alokgupta10 <guptaalok1010@gmail.com>
+Date:   Sat Jun 12 20:09:21 2021 +0530
+
+    First Commit
+
+commit 68177ffe29d4d312842710afadce43eac765288c
+Author: alokgupta10 <61457184+alokgupta10@users.noreply.github.com>
+Date:   Sat Jun 12 20:05:31 2021 +0530
+
+    Initial commit
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git push origin to master
+error: src refspec to does not match any
+error: failed to push some refs to 'https://github.com/alokgupta10/simplilearn_githubtraning.git'
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git push origin master
+To https://github.com/alokgupta10/simplilearn_githubtraning.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/alokgupta10/simplilearn_githubtraning.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ git push origin master -f
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 638 bytes | 319.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/alokgupta10/simplilearn_githubtraning.git
+ + 08b7bbd...a8125cc master -> master (forced update)
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$ cat README.md
+# simplilearn_githubtraning
+First Edit in Training
+Feature1 Branch : Modifiying Changes into files
+Feature2 Branch : Modification Completed
+Feature1 Branch : Second Modification after Rebasing and Merging to INtegration, Hotfix and Production Branch.
+Hotfix Branch: Modification Changes in files
+
+Alok@HW10-MyPC MINGW64 ~/Downloads/gitdemo/simplilearn_githubtraning (master)
+$
